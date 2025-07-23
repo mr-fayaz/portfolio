@@ -22,7 +22,6 @@ body {
 
 .btn,
 .first-button,
-.services-list button,
 .send-now {
   display: inline-flex;
   align-items: center;
@@ -35,7 +34,7 @@ body {
   text-decoration: none;
   color: #f0f0f5;
   background: #262626;
-  transition: background 0.5s;
+  transition: 0.5s;
 }
 
 .btn {
@@ -160,7 +159,7 @@ nav ul li {
 .icons,
 .social-icons {
   margin-top: 46px;
-  margin-bottom: 16px;
+  margin-bottom: 46px;
 }
 
 .icons a,
@@ -174,7 +173,7 @@ nav ul li {
 .icons a:hover,
 .social-icons a:hover {
   color: #84cc16;
-  transform: translateY(-5px);
+  transform: translateY(-10px);
 }
 
 /*-------------------About-------------------*/
@@ -298,10 +297,25 @@ nav ul li {
   font-size: 16px;
   line-height: 24px;
   color: #ababab;
+  padding-bottom: 30px;
 }
 
 .services-list div:hover {
   transform: translateY(-10px);
+}
+.services-list button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #f0f0f5;
+  background: #383838;
+  transition: 0.5s;
 }
 
 /*-------------------Portfolio-------------------*/
