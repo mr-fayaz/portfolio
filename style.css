@@ -72,7 +72,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /*-------------------Navbar-------------------*/
@@ -394,14 +394,14 @@ nav ul li {
   position: absolute;
   inset: 0;
   background: #00000080;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(8px);
 }
 
 .dialog {
   position: relative;
-  width: 100%;
+  width: 80%;
   max-width: 1200px;
-  max-height: calc(100vh - 32px);
+  max-height: calc(98vh - 40px);
   margin: auto;
   background: #000;
   border-radius: 8px;
@@ -488,6 +488,9 @@ form textarea {
   font-size: 22px;
   margin-right: 4px;
   color: #84cc16;
+}
+.mail-num:hover {
+  text-decoration: underline;
 }
 
 /*-------------------Responsive-------------------*/
