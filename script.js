@@ -1,18 +1,17 @@
+// -------------------------- Tab Functionality --------------------------
 const tablinks = document.querySelectorAll(".tab-links");
 const tabcontents = document.querySelectorAll(".tab-contents");
-const sidemenu = document.getElementById("sidemenu");
-const sections = document.querySelectorAll("section");
-const menuLinks = document.querySelectorAll("#sidemenu .menu-link");
 
 function opentab(tabname) {
-  tablinks.forEach((tablink) => tablink.classList.remove("active-link"));
-  tabcontents.forEach((tabcontent) =>
-    tabcontent.classList.remove("active-tab")
-  );
+  tablinks.forEach((link) => link.classList.remove("active-link"));
+  tabcontents.forEach((content) => content.classList.remove("active-tab"));
 
   event.currentTarget.classList.add("active-link");
-  document.getElementById(tabname).classList.add("active-tab");
+  document.getElementById(tabname)?.classList.add("active-tab");
 }
+
+// -------------------------- Side Menu Toggle --------------------------
+const sidemenu = document.getElementById("sidemenu");
 
 function openmenu() {
   sidemenu.style.right = "0";
@@ -22,7 +21,9 @@ function closemenu() {
   sidemenu.style.right = "-200px";
 }
 
-// ------------------------------------- Function to handle intersection events ----------------------------------------
+// -------------------------- Section Observer for Active Menu --------------------------
+const sections = document.querySelectorAll("section");
+const menuLinks = document.querySelectorAll("#sidemenu .menu-link");
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -34,14 +35,44 @@ const observer = new IntersectionObserver(
 
       if (entry.isIntersecting) {
         menuLinks.forEach((link) => link.classList.remove("active"));
-        menuLink.classList.add("active");
+        menuLink?.classList.add("active");
       }
     });
   },
-  {
-    threshold: 0.6, // Trigger when 60% of the section is visible
-  }
+  { threshold: 0.6 }
 );
 
-// Observe each section
 sections.forEach((section) => observer.observe(section));
+
+// -------------------------- Dialog Functionality --------------------------
+const works = document.querySelectorAll(".work");
+const dialogBox = document.querySelector(".dialog-box");
+const dialogImage = document.querySelector(".dialog img");
+const closeBtn = document.querySelector(".dialog-close-box");
+const overlay = document.querySelector(".dialog-overlay");
+
+function openDialog(src) {
+  dialogImage.setAttribute("src", src);
+  dialogBox.style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+
+function closeDialog() {
+  dialogBox.style.display = "none";
+  document.body.style.overflow = "";
+}
+
+works.forEach((work) => {
+  work.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const img = work.querySelector("img");
+    if (img) {
+      const src = img.dataset.src || img.src;
+      openDialog(src);
+    }
+  });
+});
+
+closeBtn?.addEventListener("click", closeDialog);
+overlay?.addEventListener("click", closeDialog);
