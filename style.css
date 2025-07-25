@@ -165,15 +165,15 @@ nav ul li {
 
 .icons a,
 .social-icons a {
+  display: inline-block;
   font-size: 30px;
   margin-right: 28px;
   color: #f0f0f5;
-  transition: transform 0.5s;
+   transition: transform 0.5s;
 }
 
 .icons a:hover,
 .social-icons a:hover {
-  display: inline-block;
   color: #84cc16;
   transform: translateY(-10px);
 }
@@ -369,7 +369,7 @@ nav ul li {
   height: 0;
   width: 100%;
   overflow: hidden;
-  background: rgba(8, 8, 8, 0.88);
+  background: rgba(8, 8, 8, 0.68);
   display: flex;
   flex-direction: column;
   align-items: center;
