@@ -42,6 +42,7 @@ body {
   width: fit-content;
   border: 1px solid #84cc16;
   padding: 14px 50px;
+  background-color: transparent;
 }
 
 .btn:hover {
@@ -172,6 +173,7 @@ nav ul li {
 
 .icons a:hover,
 .social-icons a:hover {
+  display: inline-block;
   color: #84cc16;
   transform: translateY(-10px);
 }
