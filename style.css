@@ -311,9 +311,21 @@ nav ul li {
 
 .work-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-top: 50px;
+}
+
+@media (max-width: 1024px) {
+  .work-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .work-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .work {
